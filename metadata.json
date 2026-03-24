@@ -1,0 +1,8 @@
+{
+  "name": "Project Z",
+  "description": "Enterprise AI execution governance system. Supervises and controls AI actions before execution to prevent unsafe behavior.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

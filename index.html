@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Z | AI Execution Governance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Visual Foundation: The Void Nebula */
+            --void-black: #020205; /* Deep purple-black */
+            --starlight-silver: #E0E0E0;
+            --graphite-depth: #0a0a0c;
+            
+            /* Chromatic Accents */
+            --core-violet: #7c3aed; /* Replaces Cyan as primary brand */
+            --safe-emerald: #10b981; /* Explicit Safety Color */
+            --blocked-rose: #e11d48; /* Cooler Red */
+            --review-amber: #f59e0b;
+            
+            /* Motion Dynamics */
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-in-out-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+            --system-velocity: 12s;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: var(--void-black);
+            color: var(--starlight-silver);
+            overflow-x: hidden;
+            margin: 0;
+            cursor: crosshair;
+        }
+
+        /* Synapse Effect Overlay - Violet Tint */
+        .synapse-layer {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 5;
+            opacity: 0.12;
+            background-image: 
+                radial-gradient(circle at 2px 2px, rgba(139, 92, 246, 0.1) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+
+        h1, h2, h3, .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .luminance-drift {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.03) 0%, transparent 70%);
+            animation: drift-cycle var(--system-velocity) infinite ease-in-out;
+            pointer-events: none;
+            z-index: -10;
+        }
+        @keyframes drift-cycle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.05); }
+        }
+
+        .tech-panel {
+            background: rgba(10, 10, 12, 0.8);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .interact-hover:hover {
+            border-color: rgba(139, 92, 246, 0.3);
+            background: rgba(15, 15, 20, 0.9);
+            box-shadow: 0 0 30px rgba(124, 58, 237, 0.1);
+        }
+
+        .interact-click:active {
+            transform: scale(0.995);
+        }
+
+        /* Decision VFX Keyframes */
+        @keyframes shatter {
+            0% { transform: scale(1); filter: brightness(1); }
+            10% { transform: scale(1.05) rotate(1deg); filter: brightness(2) contrast(1.5); }
+            100% { transform: scale(1); filter: brightness(1); }
+        }
+        .vfx-shatter { animation: shatter 0.5s var(--ease-out-expo); }
+
+        @keyframes pulse-violet {
+            0% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(124, 58, 237, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
+        }
+        .vfx-pulse-violet { animation: pulse-violet 2s infinite; }
+
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-thumb { background: rgba(139, 92, 246, 0.2); border-radius: 10px; }
+    </style>
+    <script>
+      // Safety polyfill to prevent runtime crashes if process.env is missing in browser
+      if (typeof process === 'undefined') {
+        window.process = { env: { API_KEY: '' } };
+      }
+    </script>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "@google/genai": "https://esm.sh/@google/genai@1.39.0",
+    "framer-motion": "https://esm.sh/framer-motion@11.11.11?external=react,react-dom",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+</head>
+<body class="bg-[#020205]">
+    <div class="synapse-layer"></div>
+    <div id="root"></div>
+    <div class="luminance-drift"></div>
+    <script type="module" src="./index.tsx"></script>
+</body>
+</html>
